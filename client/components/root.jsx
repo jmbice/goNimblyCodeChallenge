@@ -18,7 +18,7 @@ class Root extends React.Component {
     };
   }
 
-  fetchQuery(e) {
+  fetchQuery() {
     const {
       searchTerm, previousResults, searchResults, makeSelection,
     } = this.state;
@@ -38,7 +38,7 @@ class Root extends React.Component {
           searchResults: [d],
         });
       })
-      .catch((err) => {
+      .catch(() => {
         this.setState({
           searchResults: [],
           searchTerm: '',
