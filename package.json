@@ -1,0 +1,22 @@
+{
+  "name": "gn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmbice/goNimblyCodeChallenge.git"
+  },
+  "author": "Jordan M. Bice",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmbice/goNimblyCodeChallenge/issues"
+  },
+  "homepage": "https://github.com/jmbice/goNimblyCodeChallenge#readme",
+  "dependencies": {
+    "react": "^16.8.6"
+  }
+}
