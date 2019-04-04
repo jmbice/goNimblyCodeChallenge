@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SearchListItem = (props) => {
   const { location, parent, date } = props;
   return (
