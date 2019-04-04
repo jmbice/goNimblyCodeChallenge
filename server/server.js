@@ -15,7 +15,6 @@ app.use((req, res, next) => {
 });
 
 app.get('/location/search/query/:searchTerm', (req, res) => {
-  //get location from name
   request(`https://www.metaweather.com/api/location/search/?query=${req.params.searchTerm}`, (error, response, body) => {
     if (error) {
       response
