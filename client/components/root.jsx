@@ -9,6 +9,7 @@ class Root extends React.Component {
     super(props);
     this.fetchQuery = this.fetchQuery.bind(this);
     this.updateSearchTerm = this.updateSearchTerm.bind(this);
+    this.fetchId = this.fetchId.bind(this);
     this.state = {
       searchTerm: '',
       searchResults: [],
@@ -48,6 +49,27 @@ class Root extends React.Component {
       });
   }
 
+  fetchId(e) {
+    fetch(`/location/search/id/${e.target.value}`)
+      .then(res => res.json())
+      .then((d) => {
+        this.setState({
+          searchTerm: '',
+          noData: false,
+          makeSelection: false,
+          searchResults: [d],
+        });
+      })
+      .catch(() => {
+        this.setState({
+          searchResults: [],
+          searchTerm: '',
+          makeSelection: false,
+          noData: true,
+        });
+      });
+  }
+
   updateSearchTerm(e) {
     this.setState({ searchTerm: e.target.value });
   }
@@ -69,11 +91,11 @@ class Root extends React.Component {
         <div>
           {noData
             ? <OopsMessage />
-            : <ListFilter searchResults={searchResults} select={makeSelection} />
+            : <ListFilter results={searchResults} select={makeSelection} choose={this.fetchId} />
           }
         </div>
         <div>
-          <SearchList searchResults={previousResults} />
+          <SearchList results={previousResults} />
         </div>
       </div>
     );
