@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchList from './SearchList';
+import ListFilter from './ListFilter';
 import Search from './Search';
+import OopsMessage from './OopsMessage';
 
 class Root extends React.Component {
   constructor(props) {
@@ -10,9 +12,9 @@ class Root extends React.Component {
     this.state = {
       searchTerm: '',
       searchResults: [],
-      currentId: null,
-      currentWeather: [],
-      previousWearther: [],
+      previousResults: [],
+      noData: false,
+      makeSelection: false,
     };
   }
 
@@ -21,15 +23,27 @@ class Root extends React.Component {
   }
 
   fetchQuery(e) {
-    const { searchTerm } = this.state;
+    const { searchTerm, previousResults, searchResults } = this.state;
     if (searchTerm.length === 0) { return; }
+    const history = [...searchResults, ...previousResults];
 
     fetch(`/location/search/query/${searchTerm}`)
       .then(res => res.json())
       .then((d) => {
         this.setState({
-          searchResults: [d],
           searchTerm: '',
+          previousResults: history,
+          noData: false,
+          makeSelection: d.length > 1,
+          searchResults: [d],
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          searchResults: [],
+          searchTerm: '',
+          previousResults: history,
+          noData: true,
         });
       });
   }
@@ -39,7 +53,9 @@ class Root extends React.Component {
   }
 
   render() {
-    const { searchResults, searchTerm } = this.state;
+    const {
+      searchResults, previousResults, searchTerm, noData, makeSelection,
+    } = this.state;
 
     return (
       <div>
@@ -51,7 +67,13 @@ class Root extends React.Component {
           />
         </div>
         <div>
-          <SearchList searchResults={searchResults} />
+          {noData
+            ? <OopsMessage />
+            : <ListFilter searchResults={searchResults} select={makeSelection} />
+          }
+        </div>
+        <div>
+          <SearchList searchResults={previousResults} />
         </div>
       </div>
     );

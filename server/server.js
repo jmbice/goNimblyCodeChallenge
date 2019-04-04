@@ -25,7 +25,10 @@ app.get('/location/search/query/:searchTerm', (req, res) => {
       const searchResults = JSON.parse(body);
       if(searchResults.length > 1) {
         res.status(response.statusCode).send(body);
-      } else {
+      } else if (searchResults.length === 0) {
+        res.status(404).send('');
+      }
+      else {
         request(`https://www.metaweather.com/api/location/${searchResults[0].woeid}/`, (e, r, b) => {
           if (e) {
             r
