@@ -40,45 +40,5 @@ app.get('/location/search/query/:searchTerm', (req, res) => {
   });
 });
 
-// app.get('/location/search/lattlong', (req, res) => {
-//   // location from latt/long
-//   request(`www.metaweather.com/api/location/search/?lattlong=${req.params.latt, req.params.long}`, (error, response, body) => {
-//     if (error) {
-//       response
-//         ? res.status(response.statusCode).send()
-//         : console.log('error getting content');
-//     } else {
-//       res.status(response.statusCode).send(body);
-//     }
-//   });
-// });
-//
-app.get('/location/weather/today/:woeid', (req, res) => {
-  // weather from id, today
-  request(`www.metaweather.com/api/location/${req.params.woeid}/`, (error, response, body) => {
-    if (error) {
-      response
-        ? res.status(response.statusCode).send()
-        : console.log('error getting content');
-    } else {
-      res.status(response.statusCode).send(body);
-    }
-  });
-});
-//
-//
-// app.get('/location/weather/date', (req, res) => {
-//   // weather from id, on date
-//   request(`www.metaweather.com/api/location/${req.params.woeid}/${eq.params.date}/`, (error, response, body) => {
-//     if (error) {
-//       response
-//         ? res.status(response.statusCode).send()
-//         : console.log('error getting content');
-//     } else {
-//       res.status(response.statusCode).send(body);
-//     }
-//   });
-// });
-
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
