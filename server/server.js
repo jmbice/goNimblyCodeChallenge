@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('express');
 const path = require('path');
 const request = require('request');
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
@@ -26,13 +26,12 @@ app.get('/location/search/query/:searchTerm', (req, res) => {
         res.status(response.statusCode).send(body);
       } else if (searchResults.length === 0) {
         res.status(404).send('');
-      }
-      else {
+      } else {
         request(`https://www.metaweather.com/api/location/${searchResults[0].woeid}/`, (e, r, b) => {
           if (e) {
             r
               ? res.status(r.statusCode).send()
-              : console.log('error getting weather results from search term');
+              : console.log('error getting weather results from search term and id');
           } else {
             res.status(r.statusCode).send(b);
           }
@@ -42,5 +41,17 @@ app.get('/location/search/query/:searchTerm', (req, res) => {
   });
 });
 
+app.get('/location/search/id/:id', (req, res) => {
+  request(`https://www.metaweather.com/api/location/${req.params.id}/`, (error, response, body) => {
+    if (error) {
+      response
+        ? res.status(response.statusCode).send()
+        : console.log('error getting weather results from id');
+    } else {
+      res.status(response.statusCode).send(body);
+    }
+  });
+});
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
