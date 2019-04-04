@@ -2,12 +2,12 @@ import React from 'react';
 import SelectListItem from './SelectListItem';
 
 const SelectList = (props) => {
-  const { options } = props;
+  const { options, choose } = props;
 
   return (
     <div>
       {options[0].map(e => (
-        <SelectListItem key={e.woeid} where={e.title} />
+        <SelectListItem id={e.woeid} key={e.woeid} where={e.title} choose={choose} />
       ))}
     </div>
   );
