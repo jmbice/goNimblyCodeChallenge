@@ -18,14 +18,14 @@ class Root extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.fetchQuery();
-  }
-
   fetchQuery(e) {
-    const { searchTerm, previousResults, searchResults } = this.state;
+    const {
+      searchTerm, previousResults, searchResults, makeSelection,
+    } = this.state;
     if (searchTerm.length === 0) { return; }
-    const history = [...searchResults, ...previousResults];
+    const history = makeSelection === false
+      ? [...searchResults, ...previousResults]
+      : [...previousResults];
 
     fetch(`/location/search/query/${searchTerm}`)
       .then(res => res.json())
