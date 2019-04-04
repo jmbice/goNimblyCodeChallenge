@@ -1,1 +1,1 @@
-# goNimblyCodeChallenge
+# coding challenge for Jordan Bice
