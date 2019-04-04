@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jmbice/goNimblyCodeChallenge#readme",
   "dependencies": {
-    "react": "^16.8.6"
+    "express": "^4.16.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
