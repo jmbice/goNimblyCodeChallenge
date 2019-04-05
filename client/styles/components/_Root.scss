@@ -1,25 +1,26 @@
 .root-wrapper {
   width: 100%;
-  border: 1px solid blue;
+}
+
+%paddedWidth {
+  @include calc(width, #{"100% - 20px"});
+  margin: 0 auto;
+}
+
+.root-header {
+  @extend %paddedWidth;
+  text-align: center;
 }
 
 .root-history {
-  @include calc(width, #{"100% - 20px"});
-  border: 1px solid purple;
-  margin: 0 auto;
-
+  @extend %paddedWidth;
 }
 
 .root-results {
-  @include calc(width, #{"100% - 20px"});
-  border: 1px solid pink;
-  margin: 0 auto;
+  @extend %paddedWidth;
 
 }
 
 .root-search {
-  @include calc(width, #{"100% - 20px"});
-  border: 1px solid turquoise;
-  margin: 0 auto;
-
+  @extend %paddedWidth;
 }
