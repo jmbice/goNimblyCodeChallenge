@@ -1,5 +1,11 @@
 $theme-font: Helvetica;
 
+h1 {
+  font-family: $theme-font;
+  font-size: 25px;
+  color: $theme-color;
+}
+
 h4 {
-  color: blue;
+  font-family: $theme-font;
 }
