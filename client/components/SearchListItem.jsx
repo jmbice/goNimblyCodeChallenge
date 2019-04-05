@@ -36,20 +36,6 @@ const SearchListItem = (props) => {
       <div className="weatherTime">
         {dateFns.format(date, 'MM/DD/YYYY')}
       </div>
-      <div className="weatherSourcesWrapper">
-        {data.sources.map((e, i) => (
-          <div className="weatherSources">
-            <a
-              key={`${i}_${data.woeid}`}
-              href={`${e.url}`}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              {`${e.slug}  `}
-            </a>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
