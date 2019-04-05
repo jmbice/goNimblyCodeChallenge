@@ -13,7 +13,7 @@
   border: 1px solid $shiny-theme-color;
   background-color: $theme-color;
   font-family: $theme-font;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   @include gradient('to left', $dark-theme-color, $theme-color);
 }
 
