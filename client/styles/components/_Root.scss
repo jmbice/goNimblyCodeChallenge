@@ -4,16 +4,22 @@
 }
 
 .root-history {
-  width: 100%;
+  @include calc(width, #{"100% - 20px"});
   border: 1px solid purple;
+  margin: 0 auto;
+
 }
 
 .root-results {
-  width: 100%;
+  @include calc(width, #{"100% - 20px"});
   border: 1px solid pink;
+  margin: 0 auto;
+
 }
 
 .root-search {
-  width: 100%;
+  @include calc(width, #{"100% - 20px"});
   border: 1px solid turquoise;
+  margin: 0 auto;
+
 }
