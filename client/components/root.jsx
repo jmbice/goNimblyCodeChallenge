@@ -82,9 +82,9 @@ class Root extends React.Component {
     return (
       <div className="root-wrapper">
         <div className="root-header">
-          <h4>
-            Look up weather around the world...
-          </h4>
+          <h1>
+            Weather Checker
+          </h1>
         </div>
         <div className="root-search">
           <Search
