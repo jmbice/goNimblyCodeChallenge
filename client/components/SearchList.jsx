@@ -14,7 +14,7 @@ const SearchList = (props) => {
               key={e.woeid}
               parent={e.parent.title}
               date={e.time}
-              data={e}
+              data={e.consolidated_weather[0]}
             />
           </div>
         ))}

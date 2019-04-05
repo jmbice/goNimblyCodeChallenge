@@ -6,8 +6,8 @@ const SearchListItem = (props) => {
   const image = 'https://www.metaweather.com/static/img/weather/'
   const {
     humidity, the_temp, max_temp, min_temp, wind_direction_compass, wind_speed,
-    weather_state_abbr, weather_state_name
-  } = data.consolidated_weather[0];
+    weather_state_abbr, weather_state_name, time
+  } = data;
 
   return (
     <div className="weatherWrapper">
