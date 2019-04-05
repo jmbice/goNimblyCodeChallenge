@@ -1,0 +1,31 @@
+.searchList-wrapper {
+  text-align: center;
+  padding: 20px 0 60px 0;
+  margin: 0 auto;
+  font-family: $theme-font;
+}
+
+.searchList-history-wrapper {
+  width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid $shiny-theme-color;
+  background-color: $theme-color;
+  font-family: $theme-font;
+  padding-bottom: 20px;
+  @include gradient('to left', $dark-theme-color, $theme-color);
+}
+
+.searchList-history-item {
+  width: 340px;
+  margin: 5px auto;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid $theme-color;
+  background-color: white;
+}
+
+.searchList-current-item {
+  width: 100%;
+}
