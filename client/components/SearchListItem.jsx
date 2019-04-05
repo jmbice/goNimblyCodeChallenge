@@ -12,7 +12,7 @@ const SearchListItem = (props) => {
   return (
     <div className="weatherWrapper">
       <div className="weatherLocation">
-        <h4>{`${location}, ${parent}`}</h4>
+        <h3>{`${location}, ${parent}`}</h3>
       </div>
       <div className="weatherImageWrapper">
         <img
