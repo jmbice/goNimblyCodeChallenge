@@ -100,7 +100,7 @@ class Root extends React.Component {
           }
         </div>
         <div className="root-history">
-          <SearchList results={previousResults} />
+          <SearchList results={previousResults} history />
         </div>
       </div>
     );
