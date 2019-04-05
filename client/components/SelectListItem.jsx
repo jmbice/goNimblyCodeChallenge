@@ -5,8 +5,8 @@ const SelectListItem = (props) => {
 
   return (
     <div>
-      <button type="button" value={id} onClick={choose}>
-        {`Get Weather for ${where}`}
+      <button className="selectListItem-button" type="button" value={id} onClick={choose}>
+        {where}
       </button>
     </div>
   );
