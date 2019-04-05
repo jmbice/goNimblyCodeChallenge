@@ -25,9 +25,18 @@ const SearchListItem = (props) => {
         {`${weather_state_name}`}
       </div>
       <div className="tempWrapper">
-        <div className="temp"> {`${Math.round(min_temp)}\xB0 C`} </div>
-        <div className="temp"> {`${Math.round(the_temp)}\xB0 C`} </div>
-        <div className="temp"> {`${Math.round(max_temp)}\xB0 C`} </div>
+        <div className="temp">
+          <h5>low</h5>
+          {`${Math.round(min_temp)}\xB0 C`}
+        </div>
+        <div className="temp">
+          <h5>current</h5>
+          {`${Math.round(the_temp)}\xB0 C`}
+        </div>
+        <div className="temp">
+          <h5>high</h5>
+          {`${Math.round(max_temp)}\xB0 C`}
+        </div>
       </div>
       <div className="windWrapper">
         <div className="wind">{`Wind Speed: ${Math.round(wind_speed)} kph`}</div>
