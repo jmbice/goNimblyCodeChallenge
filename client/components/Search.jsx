@@ -6,7 +6,7 @@ const Search = (props) => {
   return (
     <div>
       <h4>
-        Look up weather near you...
+        Look up weather around the world...
       </h4>
         Enter a city:
       <input
