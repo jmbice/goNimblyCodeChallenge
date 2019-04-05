@@ -1,10 +1,13 @@
 import React from 'react';
 
 const SelectListItem = (props) => {
-  const { where } = props;
+  const { where, id, choose } = props;
+
   return (
     <div>
-      {`Where: ${where}`}
+      <button type="button" value={id} onClick={choose}>
+        {`Get Weather for ${where}`}
+      </button>
     </div>
   );
 };
