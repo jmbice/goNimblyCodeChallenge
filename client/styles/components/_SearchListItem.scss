@@ -1,0 +1,98 @@
+.weatherWrapper {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.weatherLocation {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  text-align: center;
+  color: $accent-color;
+}
+
+.weatherImageWrapper {
+  width: 100%;
+}
+
+.weatherImage {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.weatherState {
+  width: 100%;
+  margin: 30px 0 20px 0;
+  text-align: center;
+  font-weight: 600;
+  color: $accent-color;
+}
+
+.windWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.wind {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 0;
+  text-align: center;
+  border: 1px solid #d8eff4;
+  @include radial-gradient('circle at center', #5dd2cb, #5dbcd2);
+  @include calc(width, #{"100% - 6px"});
+  margin: 2px 2px;
+  color: white;
+
+}
+
+.tempWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+}
+
+.temp {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 0;
+  text-align: center;
+  border: 1px solid $shiny-theme-color;
+  @include radial-gradient('circle at center', $dark-theme-color, $theme-color);
+  @include calc(width, #{"33% - 4px"});
+  margin: 2px 2px;
+  color: white;
+}
+
+.weatherTime {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  margin: 2px 2px;
+  background: lightgray;
+  border-radius: 5px;
+  border-color: gray;
+  @include calc(width, #{"100% - 6px"});
+}
+
+.weatherSourcesWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.weatherSources {
+  background-color: #5d95d2;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  padding: 5px 0;
+  margin: 2px 2px;
+  border-radius: 5px;
+  @include calc(width, #{"33% - 4px"});
+}
