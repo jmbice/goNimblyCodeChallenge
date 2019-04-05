@@ -80,21 +80,26 @@ class Root extends React.Component {
     } = this.state;
 
     return (
-      <div>
-        <div>
+      <div className="root-wrapper">
+        <div className="root-header">
+          <h4>
+            Look up weather around the world...
+          </h4>
+        </div>
+        <div className="root-search">
           <Search
             update={this.updateSearchTerm}
             initiate={this.fetchQuery}
             term={searchTerm}
           />
         </div>
-        <div>
+        <div className="root-results">
           {noData
             ? <OopsMessage />
             : <ListFilter results={searchResults} select={makeSelection} choose={this.fetchId} />
           }
         </div>
-        <div>
+        <div className="root-history">
           <SearchList results={previousResults} />
         </div>
       </div>
