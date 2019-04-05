@@ -31,7 +31,7 @@ const SearchListItem = (props) => {
       </div>
       <div className="windWrapper">
         <div className="wind">{`Wind Speed: ${Math.round(wind_speed)} kph`}</div>
-        <div className="wind">{`Direction: ${wind_direction_compass}`}</div>
+        <div className="wind">{`Wind Direction: ${wind_direction_compass}`}</div>
       </div>
       <div className="weatherTime">
         {dateFns.format(date, 'MM/DD/YYYY')}
