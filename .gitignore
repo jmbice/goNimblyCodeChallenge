@@ -4,3 +4,4 @@ public/dist
 sampleJSON.js
 .DS_Store
 public/.DS_Store
+npm-debug.log
