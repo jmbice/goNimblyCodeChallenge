@@ -1,2 +1,2 @@
-web: webpack --config webpack.prod.js
-web: node server/server.js
+web: npm run prod
+web: node ./server/server.js
