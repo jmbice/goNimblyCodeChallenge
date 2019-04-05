@@ -4,3 +4,17 @@
   #{$property}: -webkit-calc(#{$expression});
   #{$property}: calc(#{$expression});
 }
+
+@mixin gradient($direction, $color1, $color2) {
+  background: -moz-linear-gradient(#{$direction}, #{$color1}, #{$color2});
+  background: -o-linear-gradient(#{$direction}, #{$color1}, #{$color2});
+  background: -webkit-linear-gradient(#{$direction}, #{$color1}, #{$color2});
+  background: linear-gradient(#{$direction}, #{$color1}, #{$color2});
+}
+
+@mixin radial-gradient($direction, $color1, $color2) {
+  background: -moz-radial-gradient(#{$direction}, #{$color1}, #{$color2});
+  background: -o-radial-gradient(#{$direction}, #{$color1}, #{$color2});
+  background: -webkit-radial-gradient(#{$direction}, #{$color1}, #{$color2});
+  background: radial-gradient(#{$direction}, #{$color1}, #{$color2});
+}
