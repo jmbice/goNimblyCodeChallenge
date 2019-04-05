@@ -54,9 +54,9 @@
     text-decoration:none;
     font-family: $theme-font;
     font-size: 20px;
-    background-color: $theme-color;
     color: white;
     opacity: 1;
     @extend %search-transition;
+    @include radial-gradient('circle at center', $dark-theme-color, $theme-color);
   }
 }
