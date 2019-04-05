@@ -2,10 +2,10 @@ import React from 'react';
 import SearchList from './SearchList';
 import SelectList from './SelectList';
 
-const FilterList = (props) => {
+const ListFilter = (props) => {
   const { results, select, choose } = props;
   return (
-    <div>
+    <div className={results.length ? 'listFilter-results-show' : 'listFilter-results'}>
       {select
         ? <SelectList options={results} choose={choose} />
         : <SearchList results={results} />
@@ -14,4 +14,4 @@ const FilterList = (props) => {
   );
 };
 
-export default FilterList;
+export default ListFilter;
