@@ -1,0 +1,11 @@
+.oopsMessage-wrapper {
+  @include calc(width, #{"380px - 40px"});
+  padding: 0 20px 20px 20px;
+  margin: 20px auto 20px auto;
+  border: 1px solid $accent-color;
+  color: $accent-color;
+}
+
+.oopsMessage-title {
+  text-align: center;
+}
