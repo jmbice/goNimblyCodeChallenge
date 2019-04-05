@@ -6,9 +6,12 @@ const SelectList = (props) => {
 
   return (
     <div>
-      {options[0].map(e => (
-        <SelectListItem id={e.woeid} key={e.woeid} where={e.title} choose={choose} />
-      ))}
+      <div className="selectList-instructions">Did you mean...</div>
+      <ul>
+        {options[0].map(e => (
+          <SelectListItem id={e.woeid} key={e.woeid} where={e.title} choose={choose} />
+        ))}
+      </ul>
     </div>
   );
 };
