@@ -24,16 +24,23 @@ class Root extends React.Component {
       searchTerm, previousResults, searchResults, makeSelection,
     } = this.state;
     if (searchTerm.length === 0) { return; }
-    const history = makeSelection === false
-      ? [...searchResults, ...previousResults]
-      : [...previousResults];
+
+    let newSearchHistory = [];
+    if (makeSelection === false) {
+      [...searchResults, ...previousResults].forEach((e, i) => {
+        const isFirst = (i === 0);
+        if (isFirst || e.title !== searchResults[0].title) {
+          newSearchHistory.push(e);
+        }
+      });
+    } else { newSearchHistory = [...previousResults]; }
 
     fetch(`/location/search/query/${searchTerm}`)
       .then(res => res.json())
       .then((d) => {
         this.setState({
           searchTerm: '',
-          previousResults: history,
+          previousResults: newSearchHistory,
           noData: false,
           makeSelection: d.length > 1,
           searchResults: [d],
@@ -43,7 +50,7 @@ class Root extends React.Component {
         this.setState({
           searchResults: [],
           searchTerm: '',
-          previousResults: history,
+          previousResults: newSearchHistory,
           noData: true,
         });
       });
